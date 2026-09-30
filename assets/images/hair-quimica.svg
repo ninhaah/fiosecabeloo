@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="quimicaBg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDE9FE"/>
+      <stop offset="1" stop-color="#DDD6FE"/>
+    </linearGradient>
+    <linearGradient id="quimicaFios" x1="0" y1="0" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#5B21B6"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#quimicaBg)"/>
+  <circle cx="60" cy="60" r="46" fill="#FFFFFF" fill-opacity="0.85"/>
+  <!-- Fios com selagem térmica e reposição de massa -->
+  <line x1="42" y1="24" x2="42" y2="96" stroke="url(#quimicaFios)" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="60" y1="20" x2="60" y2="100" stroke="url(#quimicaFios)" stroke-width="5" stroke-linecap="round"/>
+  <line x1="78" y1="24" x2="78" y2="96" stroke="url(#quimicaFios)" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Pontes de reconstrução / selamento -->
+  <line x1="34" y1="42" x2="86" y2="42" stroke="#A78BFA" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="34" y1="64" x2="86" y2="64" stroke="#A78BFA" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <line x1="34" y1="84" x2="86" y2="84" stroke="#A78BFA" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <!-- Ícone de cuidado protetor -->
+  <path d="M60 28 L64 34 L70 36 L64 38 L60 44 L56 38 L50 36 L56 34 Z" fill="#F43F5E"/>
+</svg>

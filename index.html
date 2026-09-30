@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fio & Cuidado — Conheça seu cabelo. Cuide dos seus fios.</title>
+  <meta name="description" content="Um guia interativo para conhecer diferentes tipos de cabelo e descobrir cuidados que podem fazer parte da sua rotina.">
+
+  <!-- Favicon Relativo para GitHub Pages -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Script de Normalização de Base URL para GitHub Pages (/fioss/) -->
+  <script>
+    (function() {
+      // Garante que o acesso a /fioss seja normalizado para /fioss/
+      // permitindo que todos os caminhos relativos de imagens resolvam perfeitamente
+      var p = window.location.pathname;
+      if (p && !p.endsWith('/') && !p.match(/\.[a-zA-Z0-9]+$/)) {
+        window.location.replace(window.location.origin + p + '/' + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
+
+  <!-- Fontes do Google: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos com Caminho Relativo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Elementos Decorativos de Fundo (100% seguros contra rolagem horizontal) -->
+  <div class="bg-decor-top" aria-hidden="true"></div>
+  <div class="bg-decor-bottom" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       1. Cabeçalho & Navegação Principal (Mobile-First)
+       ======================================================================== -->
+  <header class="header">
+    <div class="container">
+      <a href="#inicio" class="brand" aria-label="Página Inicial - Fio e Cuidado">
+        <div class="brand-icon">
+          <img src="assets/icons/logo.svg" alt="Logotipo Fio &amp; Cuidado" width="44" height="44">
+        </div>
+        <div class="brand-text">
+          <h1>Fio &amp; Cuidado</h1>
+          <span>Guia Capilar Educativo</span>
+        </div>
+      </a>
+
+      <!-- Navegação Desktop -->
+      <nav class="nav-desktop" aria-label="Menu Principal">
+        <a href="#inicio" class="nav-link active">Início</a>
+        <a href="#tipos" class="nav-link">Tipos de cabelo</a>
+        <a href="#rotina" class="nav-link">Rotina capilar</a>
+        <a href="#cuidados" class="nav-link">Cuidados</a>
+        <a href="#analisar" class="nav-link btn-nav-action">Analisar meu cabelo</a>
+        <a href="#duvidas" class="nav-link">Dúvidas</a>
+      </nav>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" type="button">
+        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="4" y1="6" x2="20" y2="6"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menu Dropdown Mobile -->
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menu Móvel">
+      <a href="#inicio" class="mobile-nav-link">Início</a>
+      <a href="#tipos" class="mobile-nav-link">Tipos de cabelo</a>
+      <a href="#rotina" class="mobile-nav-link">Rotina capilar</a>
+      <a href="#cuidados" class="mobile-nav-link">Cuidados</a>
+      <a href="#analisar" class="mobile-nav-link btn-highlight">Analisar meu cabelo</a>
+      <a href="#duvidas" class="mobile-nav-link">Dúvidas</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         2. Página Inicial / Hero Section
+         ====================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            Guia Interativo de Saúde &amp; Bem-Estar Capilar
+          </div>
+          <h2 class="hero-title">
+            Fio &amp; Cuidado
+            <span class="gradient-text">“Conheça seu cabelo. Cuide dos seus fios.”</span>
+          </h2>
+          <p class="hero-description">
+            Um guia interativo para conhecer diferentes tipos de cabelo e descobrir cuidados que podem fazer parte da sua rotina.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#analisar" class="btn btn-primary">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <span>Descobrir Minha Rotina</span>
+            </a>
+            <a href="#tipos" class="btn btn-secondary">
+              <span>Explorar Tipos de Fios</span>
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="hero-stat">
+              <strong>5 Tipos</strong>
+              <span>Classificações completas</span>
+            </div>
+            <div class="hero-stat">
+              <strong>3 Etapas</strong>
+              <span>Cronograma capilar</span>
+            </div>
+            <div class="hero-stat">
+              <strong>100%</strong>
+              <span>Educativo &amp; Gratuito</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-illustration-wrapper">
+            <!-- Pílulas informativas decorativas -->
+            <div class="floating-pill pill-1">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
+              <span>Hidratação Profunda</span>
+            </div>
+            <div class="floating-pill pill-2">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Brilho &amp; Definição</span>
+            </div>
+            <div class="floating-pill pill-3">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+              <span>Nutrição &amp; Força</span>
+            </div>
+
+            <img src="assets/images/hero-hair.svg" alt="Ilustração representativa com diferentes texturas capilares e cuidados" class="hero-illustration-img" width="400" height="360">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. Seção: Tipos de Cabelo (Cards Coloridos com Modal)
+         ====================================================================== -->
+    <section class="section section-alt" id="tipos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag tag-purple">Diversidade &amp; Texturas</span>
+          <h2 class="section-title">Tipos de Cabelo</h2>
+          <p class="section-subtitle">
+            Cada curvatura possui características biológicas únicas e necessidades exclusivas. Conheça cada uma e clique para explorar os cuidados recomendados.
+          </p>
+        </div>
+
+        <div class="hair-types-grid">
+          <!-- 1. Liso -->
+          <article class="hair-type-card card-liso">
+            <div class="hair-type-image-wrapper">
+              <img src="assets/images/hair-liso.svg" alt="Ilustração de cabelo liso com fios alinhados" width="82" height="82" loading="lazy">
+            </div>
+            <h3 class="hair-type-name">Liso</h3>
+            <p class="hair-type-desc">
+              Fios retos sem ondulações. A oleosidade natural percorre a haste livremente, proporcionando brilho rápido e propensão a raiz oleosa.
+            </p>
+            <button class="btn-card-details" data-open-modal="liso" type="button" aria-label="Ver cuidados para cabelo liso">
+              <span>Ver cuidados</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- 2. Ondulado -->
+          <article class="hair-type-card card-ondulado">
+            <div class="hair-type-image-wrapper">
+              <img src="assets/images/hair-ondulado.svg" alt="Ilustração de cabelo ondulado com padrão em S" width="82" height="82" loading="lazy">
+            </div>
+            <h3 class="hair-type-name">Ondulado</h3>
+            <p class="hair-type-desc">
+              Padrão em formato de "S". Fios versáteis que combinam raiz mais lisa com comprimento sinuoso, pedindo equilíbrio contra o frizz.
+            </p>
+            <button class="btn-card-details" data-open-modal="ondulado" type="button" aria-label="Ver cuidados para cabelo ondulado">
+              <span>Ver cuidados</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- 3. Cacheado -->
+          <article class="hair-type-card card-cacheado">
+            <div class="hair-type-image-wrapper">
+              <img src="assets/images/hair-cacheado.svg" alt="Ilustração de cabelo cacheado em espirais" width="82" height="82" loading="lazy">
+            </div>
+            <h3 class="hair-type-name">Cacheado</h3>
+            <p class="hair-type-desc">
+              Espirais bem marcadas e cheias de movimento. A curvatura dificulta o trajeto do óleo natural, demandando hidratação e nutrição frequentes.
+            </p>
+            <button class="btn-card-details" data-open-modal="cacheado" type="button" aria-label="Ver cuidados para cabelo cacheado">
+              <span>Ver cuidados</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- 4. Crespo -->
+          <article class="hair-type-card card-crespo">
+            <div class="hair-type-image-wrapper">
+              <img src="assets/images/hair-crespo.svg" alt="Ilustração de cabelo crespo em padrão Z e espirais unidas" width="82" height="82" loading="lazy">
+            </div>
+            <h3 class="hair-type-name">Crespo</h3>
+            <p class="hair-type-desc">
+              Padrão em Z ou espirais fechadinhas, dotado de muito volume e nobreza. Exige delicadeza no desembaraço e nutrição potente com manteigas.
+            </p>
+            <button class="btn-card-details" data-open-modal="crespo" type="button" aria-label="Ver cuidados para cabelo crespo">
+              <span>Ver cuidados</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- 5. Pós-progressiva -->
+          <article class="hair-type-card card-quimica">
+            <div class="hair-type-image-wrapper">
+              <img src="assets/images/hair-quimica.svg" alt="Ilustração de cabelo pós-progressiva com tratamento protetor" width="82" height="82" loading="lazy">
+            </div>
+            <h3 class="hair-type-name">Pós-progressiva</h3>
+            <p class="hair-type-desc">
+              Fios transformados por processos químicos ou térmicos. Cutículas alinhadas artificialmente que necessitam de reposição de massa e proteção.
+            </p>
+            <button class="btn-card-details" data-open-modal="quimica" type="button" aria-label="Ver cuidados para cabelo pós-progressiva">
+              <span>Ver cuidados</span>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. Seção: Rotina Capilar (3 Etapas: Hidratar → Nutrir → Reconstruir)
+         ====================================================================== -->
+    <section class="section" id="rotina">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag tag-mint">Pilares de Tratamento</span>
+          <h2 class="section-title">O Cronograma Capilar</h2>
+          <p class="section-subtitle">
+            Compreenda as três etapas essenciais para manter os fios saudáveis, resistentes e radiantes ao longo das semanas.
+          </p>
+        </div>
+
+        <!-- Apresentação Visual do Fluxo das 3 Etapas -->
+        <div class="routine-steps-flow">
+          <div class="flow-step-badge step-1">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+            <span>1. Hidratar (Água)</span>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-step-badge step-2">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            <span>2. Nutrir (Óleos)</span>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-step-badge step-3">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>3. Reconstruir (Proteínas)</span>
+          </div>
+        </div>
+
+        <div class="routine-cards-grid">
+          <!-- Card Hidratação -->
+          <article class="routine-card card-hidratacao">
+            <div class="routine-card-header">
+              <div class="routine-icon-box">
+                <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+              </div>
+              <div class="routine-card-title">
+                <span>Etapa 01</span>
+                <h3>Hidratação</h3>
+              </div>
+            </div>
+            <p class="routine-card-body">
+              A hidratação ajuda a repor a <strong>água</strong> e a umidade natural do cabelo, essenciais para manter os fios com aparência mais macia, maleável, sedosa e com movimento leve.
+            </p>
+            <div class="routine-benefits-list">
+              <h4>Ativos Recomendados:</h4>
+              <ul>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> D-Pantenol (Pró-vitamina B5)</li>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Aloe Vera (Babosa natural)</li>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Glicerina vegetal e extratos botânicos</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card Nutrição -->
+          <article class="routine-card card-nutricao">
+            <div class="routine-card-header">
+              <div class="routine-icon-box">
+                <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              </div>
+              <div class="routine-card-title">
+                <span>Etapa 02</span>
+                <h3>Nutrição</h3>
+              </div>
+            </div>
+            <p class="routine-card-body">
+              A nutrição está relacionada à reposição de <strong>lipídios e óleos</strong> benéficos. Ela forma uma barreira protetora que reduz o ressecamento, sela a hidratação e controla ativamente o frizz.
+            </p>
+            <div class="routine-benefits-list">
+              <h4>Ativos Recomendados:</h4>
+              <ul>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Óleos vegetais (Argan, Abacate, Coco)</li>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Manteiga de Karité e de Murumuru</li>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Ceramidas e ácidos graxos essenciais</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card Reconstrução -->
+          <article class="routine-card card-reconstrucao">
+            <div class="routine-card-header">
+              <div class="routine-icon-box">
+                <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div class="routine-card-title">
+                <span>Etapa 03</span>
+                <h3>Reconstrução</h3>
+              </div>
+            </div>
+            <p class="routine-card-body">
+              A reconstrução repõe as <strong>proteínas</strong> estruturais da fibra capilar. Deve ser especialmente considerada quando os fios estão fragilizados, porosos, quebradiços ou passaram por química.
+            </p>
+            <div class="routine-benefits-list">
+              <h4>Ativos Recomendados:</h4>
+              <ul>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Queratina hidrolisada vegetal</li>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Creatina e complexo de aminoácidos</li>
+                <li><svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Colágeno e proteínas do trigo</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. Seção: Cuidados por Tipo de Cabelo
+         ====================================================================== -->
+    <section class="section section-alt" id="cuidados">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag tag-rose">Guia Prático</span>
+          <h2 class="section-title">Cuidados por tipo de cabelo</h2>
+          <p class="section-subtitle">
+            Diretrizes práticas de lavagem, hidratação, finalização e proteção térmica formuladas especificamente para cada estrutura de fio.
+          </p>
+        </div>
+
+        <div class="care-types-grid">
+          <!-- Cuidado: Liso -->
+          <article class="care-type-item">
+            <header class="care-item-header">
+              <div class="care-item-icon" style="background:#e0f2fe; color:#0284c7;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+              </div>
+              <div class="care-item-title">
+                <h3>Cabelo Liso</h3>
+                <p>Equilíbrio entre raiz e pontas</p>
+              </div>
+            </header>
+            <div class="care-tips-list">
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Lavagem Consciente:</strong>
+                  <p>Lave o couro cabeludo com água morna ou fria para evitar a superprodução de sebo.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Hidratação Leve:</strong>
+                  <p>Aplique máscaras apenas do comprimento às pontas, evitando produtos densos na raiz.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Proteção Térmica:</strong>
+                  <p>Nunca use secador ou prancha sem protetor térmico em spray para preservar a cutícula.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Controle de Oleosidade:</strong>
+                  <p>Evite passar as mãos nos fios frequentemente ao longo do dia para não engordurá-los.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cuidado: Ondulado -->
+          <article class="care-type-item">
+            <header class="care-item-header">
+              <div class="care-item-icon" style="background:#d1fae5; color:#059669;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c3-4 6 4 9 0s6 4 9 0"/></svg>
+              </div>
+              <div class="care-item-title">
+                <h3>Cabelo Ondulado</h3>
+                <p>Movimento e definição natural</p>
+              </div>
+            </header>
+            <div class="care-tips-list">
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Hidratação Equilibrada:</strong>
+                  <p>Mantenha hidratação semanal com babosa e pantenol para reter água sem perder leveza.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Finalização Texturizadora:</strong>
+                  <p>Amasse as ondas de baixo para cima com toalha de microfibra e produtos fluidos.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Definição sem Pesar:</strong>
+                  <p>Mousses e gelatinas suaves garantem fixação e definição duradoura às curvas.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Controle de Frizz:</strong>
+                  <p>Evite esfregar tecidos ásperos e borrife água com leave-in no day after para reavivar.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cuidado: Cacheado -->
+          <article class="care-type-item">
+            <header class="care-item-header">
+              <div class="care-item-icon" style="background:#ffe4e6; color:#f43f5e;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 14a4 4 0 110-8 4 4 0 010 8z"/></svg>
+              </div>
+              <div class="care-item-title">
+                <h3>Cabelo Cacheado</h3>
+                <p>Elasticidade e nutrição intensa</p>
+              </div>
+            </header>
+            <div class="care-tips-list">
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Hidratação Profunda:</strong>
+                  <p>Reponha água semanalmente para manter o formato elástico dos cachos sem ressecar.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Nutrição com Óleos Vegetais:</strong>
+                  <p>Faça umectações periódicas com óleo de coco ou rícino para combater a porosidade.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Fitagem Estruturada:</strong>
+                  <p>Distribua creme de pentear mecha a mecha com os cabelos encharcados para cachos definidos.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Preservação dos Cachos:</strong>
+                  <p>Use fronha ou touca de cetim para dormir e não quebrar a estrutura ao descansar.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cuidado: Crespo -->
+          <article class="care-type-item">
+            <header class="care-item-header">
+              <div class="care-item-icon" style="background:#fef3c7; color:#d97706;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              </div>
+              <div class="care-item-title">
+                <h3>Cabelo Crespo</h3>
+                <p>Emoliência, carinho e volume</p>
+              </div>
+            </header>
+            <div class="care-tips-list">
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Hidratação &amp; Nutrição Potentes:</strong>
+                  <p>Manteiga de karité e óleos densos formam camada protetora indispensável contra o ressecamento.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Desembaraço Cuidadoso:</strong>
+                  <p>Nunca penteie os fios a seco. Desembarace somente com os fios molhados e condicionados.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Proteção dos Fios:</strong>
+                  <p>Pré-shampoo com óleo antes da lavagem e touca de cetim à noite preservam a fibra capilar.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Manutenção da Definição:</strong>
+                  <p>O método LOC (Líquido, Óleo, Creme) sela a umidade por vários dias sem ressecar as pontas.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cuidado: Pós-progressiva (Destaque Especial) -->
+          <article class="care-type-item special-post-prog">
+            <span class="special-badge">Cuidado Especial Pós-Química</span>
+            <header class="care-item-header">
+              <div class="care-item-icon" style="background:#ede9fe; color:#7c3aed;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="care-item-title">
+                <h3>Pós-progressiva &amp; Alisamentos</h3>
+                <p>Preservação e restauração contínua de massa capilar</p>
+              </div>
+            </header>
+            <div class="care-tips-list">
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Hidratação Constante:</strong>
+                  <p>Fios alisados tendem a ficar rígidos com o tempo. A hidratação devolve maleabilidade e balanço natural.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Nutrição com Reposição Lipídica:</strong>
+                  <p>Os processos químicos removem o manto hidrolipídico do fio; óleos nobres repõem o toque aveludado e o brilho.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Proteção Térmica Indispensável:</strong>
+                  <p>Secador ou prancha em fios com química sem protetor térmico é a principal causa de corte químico e quebra.</p>
+                </div>
+              </div>
+              <div class="care-tip-bullet">
+                <span class="care-tip-bullet-icon"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+                <div class="care-tip-text">
+                  <strong>Atenção à Fragilidade dos Fios:</strong>
+                  <p>Utilize shampoos de pH ácido/suave e intercale reconstruções com queratina para preencher as fissuras da haste.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4 & 5. Analisar Meu Cabelo — Principal Interação do Aplicativo
+         ====================================================================== -->
+    <section class="quiz-section" id="analisar">
+      <div class="container quiz-container">
+        <div class="section-header">
+          <span class="section-tag tag-purple">Diagnóstico Educativo Interativo</span>
+          <h2 class="section-title">Descubra uma rotina para o seu cabelo</h2>
+          <p class="section-subtitle">
+            Responda às 3 perguntas rápidas abaixo para receber uma análise personalizada e sugestões sob medida para sua rotina.
+          </p>
+        </div>
+
+        <div class="quiz-card-wrapper">
+          <form id="hairQuizForm" onsubmit="return false;">
+            <!-- Pergunta 1 -->
+            <fieldset class="quiz-question-block" id="questionBlock1">
+              <legend class="question-header">
+                <span class="question-num">1</span>
+                <h3 class="question-title">Qual é o seu tipo de cabelo?</h3>
+              </legend>
+              <div class="options-grid">
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairType" value="Liso">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Liso</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairType" value="Ondulado">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Ondulado</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairType" value="Cacheado">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Cacheado</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairType" value="Crespo">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Crespo</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairType" value="Passei por progressiva/alisamento">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Passei por progressiva/alisamento</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Pergunta 2 -->
+            <fieldset class="quiz-question-block" id="questionBlock2">
+              <legend class="question-header">
+                <span class="question-num">2</span>
+                <h3 class="question-title">Como você sente seu cabelo atualmente?</h3>
+              </legend>
+              <div class="options-grid">
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairState" value="Ressecado">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Ressecado</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairState" value="Oleoso">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Oleoso</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairState" value="Com frizz">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Com frizz</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairState" value="Quebradiço">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Quebradiço</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairState" value="Sem definição">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Sem definição</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairState" value="Normal/equilibrado">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Normal/equilibrado</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Pergunta 3 -->
+            <fieldset class="quiz-question-block" id="questionBlock3">
+              <legend class="question-header">
+                <span class="question-num">3</span>
+                <h3 class="question-title">O que você mais deseja cuidar?</h3>
+              </legend>
+              <div class="options-grid">
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairGoal" value="Hidratação">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Hidratação</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairGoal" value="Nutrição">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Nutrição</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairGoal" value="Reconstrução">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Reconstrução</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairGoal" value="Definição">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Definição</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairGoal" value="Controle de frizz">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Controle de frizz</span>
+                </label>
+                <label class="option-card" tabindex="0">
+                  <input type="radio" name="hairGoal" value="Brilho">
+                  <span class="option-indicator"><span class="option-indicator-inner"></span></span>
+                  <span class="option-label">Brilho</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Mensagem de Validação -->
+            <div class="quiz-alert" id="quizAlert" role="alert">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Por favor, responda às 3 perguntas para gerar a análise do seu cabelo.</span>
+            </div>
+
+            <!-- Botão Principal de Análise -->
+            <div class="quiz-action-wrapper">
+              <button type="button" class="btn-analyze-hair" id="btnAnalyzeHair">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                <span>Analisar meu cabelo</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ====================================================================
+             5 & 11. Resultado Personalizado da Análise (100% no navegador)
+             ==================================================================== -->
+        <div class="analysis-result-container" id="analysisResultContainer">
+          <div class="result-card-highlight">
+            <header class="result-header">
+              <div class="result-header-text">
+                <h3>Sua sugestão de cuidados</h3>
+                <p>Recomendações elaboradas com base no perfil capilar informado</p>
+              </div>
+              <div class="result-badge-success">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+                <span>Análise Concluída</span>
+              </div>
+            </header>
+
+            <div class="result-body">
+              <!-- Bloco: Seu Perfil Capilar -->
+              <div class="user-profile-summary">
+                <h4 class="profile-summary-title">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <span>Seu perfil capilar</span>
+                </h4>
+                <div class="profile-tags-grid">
+                  <div class="profile-tag-item">
+                    <span class="profile-tag-label">Tipo de cabelo:</span>
+                    <span class="profile-tag-value" id="resProfileType">-</span>
+                  </div>
+                  <div class="profile-tag-item">
+                    <span class="profile-tag-label">Característica:</span>
+                    <span class="profile-tag-value" id="resProfileState">-</span>
+                  </div>
+                  <div class="profile-tag-item">
+                    <span class="profile-tag-label">Objetivo:</span>
+                    <span class="profile-tag-value" id="resProfileGoal">-</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Aviso Específico para Pós-Progressiva -->
+              <div class="progressive-notice" id="progressiveNoticeBlock">
+                <h4>
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  <span>Atenção Especial: Cabelos com Processos Químicos</span>
+                </h4>
+                <p>
+                  Cabelos submetidos a progressivas ou outros processos de alisamento sofreram modificação na estrutura original do fio e podem precisar de atenção especial, incluindo hidratação profunda contínua, nutrição repositora de lipídios e cuidados rigorosos de proteção térmica para preservar a integridade da fibra capilar.
+                </p>
+              </div>
+
+              <!-- Lista de Cuidados Sugeridos -->
+              <h4 class="suggestions-title">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                <span>Cuidados sugeridos</span>
+              </h4>
+              <div class="suggestions-list" id="suggestionsList">
+                <!-- Preenchido dinamicamente via script.js -->
+              </div>
+
+              <!-- Mensagem Final Educativa -->
+              <div class="result-disclaimer">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                <p>
+                  Lembre-se: cada cabelo possui necessidades diferentes. Observe como seus fios respondem aos cuidados e, quando necessário, procure orientação profissional.
+                </p>
+              </div>
+
+              <!-- Ação de Refazer -->
+              <div class="result-footer-actions">
+                <button type="button" class="btn-reset-quiz" id="btnResetQuiz">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                  <span>Fazer nova análise</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8 & 10. Campo de Entrada Extra (Qual é a sua maior dúvida sobre seu cabelo?)
+         ====================================================================== -->
+    <section class="faq-input-section" id="duvidas">
+      <div class="container">
+        <div class="faq-card-box">
+          <div class="faq-icon-top">
+            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h2 class="faq-title">Qual é a sua maior dúvida sobre seu cabelo?</h2>
+          <p class="faq-subtitle">
+            Tem alguma pergunta sobre lavagem, frizz, cronograma ou finalização? Digite abaixo e receba uma orientação imediata.
+          </p>
+
+          <form class="faq-form" onsubmit="return false;">
+            <div class="faq-input-wrapper">
+              <input type="text" id="userFaqInput" class="faq-input" placeholder="Digite sua dúvida aqui…" aria-label="Digite sua dúvida sobre cabelo">
+              <button type="button" class="btn-faq-submit" id="btnFaqSubmit">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span>Mostrar dica</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Resposta do campo extra -->
+          <div class="faq-response-box" id="faqResponseBox" role="status">
+            <div id="faqResponseContent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       Modal Informativo de Detalhes dos Tipos de Cabelo
+       ======================================================================== -->
+  <div class="modal-overlay" id="hairTypeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <header class="modal-header">
+        <div class="modal-header-left">
+          <div class="modal-type-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </div>
+          <div class="modal-header-text">
+            <h3 id="modalTitle">Nome do Tipo</h3>
+            <span id="modalSubtitle">Guia detalhado de cuidados e características</span>
+          </div>
+        </div>
+        <button class="btn-close-modal" id="btnCloseModal" aria-label="Fechar janela de detalhes" type="button">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </header>
+
+      <div class="modal-body" id="modalBodyContent">
+        <!-- Injetado dinamicamente com os 8 temas:
+             1. Características dos fios
+             2. Hidratação
+             3. Nutrição
+             4. Reconstrução
+             5. Finalização
+             6. Cuidados no dia a dia
+             7. Cuidados ao lavar
+             8. Proteção dos fios -->
+      </div>
+
+      <footer class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnFooterClose">Fechar detalhes</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Rodapé (Footer)
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">
+              <img src="assets/icons/logo.svg" alt="Logotipo Fio &amp; Cuidado" width="44" height="44">
+            </div>
+            <div class="brand-text">
+              <h2>Fio &amp; Cuidado</h2>
+              <span>Conheça seu cabelo. Cuide dos seus fios.</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Um guia interativo e educativo para ajudar você a valorizar a beleza e saúde natural dos seus cabelos todos os dias.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação Rápida</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Página Inicial</a></li>
+            <li><a href="#tipos">Tipos de Cabelo</a></li>
+            <li><a href="#rotina">Rotina Capilar</a></li>
+            <li><a href="#cuidados">Cuidados</a></li>
+            <li><a href="#analisar">Analisar Meu Cabelo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Aviso Educativo</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #94a3b8;">
+            O objetivo deste aplicativo é puramente informativo e educativo. Ele não diagnostica problemas capilares nem substitui a consulta com dermatologistas ou tricologistas especializados.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fio &amp; Cuidado — Todos os direitos reservados.</p>
+        <p>Desenvolvido com carinho para todos os tipos de fios.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Relativo para GitHub Pages -->
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="400" height="360" fill="none">
+  <defs>
+    <linearGradient id="heroGradBg" x1="0" y1="0" x2="400" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F3FF"/>
+      <stop offset="1" stop-color="#FFF1F2"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="50" y1="40" x2="350" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="0.5" stop-color="#F43F5E"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#7C3AED" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="400" height="360" rx="32" fill="url(#heroGradBg)"/>
+
+  <!-- Halo de Luz -->
+  <circle cx="200" cy="180" r="120" fill="#FFFFFF" fill-opacity="0.9" filter="url(#subtleGlow)"/>
+
+  <!-- Fios lisos azuis -->
+  <path d="M120 70 L120 280" stroke="#0284C7" stroke-width="5" stroke-linecap="round"/>
+  <path d="M130 90 L130 260" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Fios ondulados verdes -->
+  <path d="M165 70 Q190 120 165 170 T165 280" stroke="#059669" stroke-width="5" stroke-linecap="round"/>
+  <path d="M175 90 Q200 135 175 180 T175 260" stroke="#6EE7B7" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Fios cacheados rosas -->
+  <path d="M225 70 C260 95 260 135 225 160 C260 185 260 225 225 250 C260 275 250 285 225 285" stroke="#F43F5E" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Fios crespos dourados -->
+  <path d="M275 70 Q292 84 275 98 Q292 112 275 126 Q292 140 275 154 Q292 168 275 182 Q292 196 275 210 Q292 224 275 238 Q292 252 275 266 Q292 280 275 280" stroke="#D97706" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Gota central de tratamento com brilho -->
+  <g transform="translate(170, 130)">
+    <circle cx="30" cy="30" r="34" fill="#7C3AED" fill-opacity="0.12"/>
+    <path d="M30 6 C20 18 14 28 14 38 A16 16 0 0 0 46 38 C46 28 40 18 30 6 Z" fill="url(#hairGrad)"/>
+    <circle cx="25" cy="35" r="4" fill="#FFFFFF" fill-opacity="0.85"/>
+  </g>
+
+  <!-- Brilhos decorativos -->
+  <path d="M85 110 L90 118 L98 122 L90 126 L85 134 L80 126 L72 122 L80 118 Z" fill="#FBBF24"/>
+  <path d="M315 95 L319 101 L325 104 L319 107 L315 113 L311 107 L305 104 L311 101 Z" fill="#A78BFA"/>
+  <path d="M300 240 L303 245 L308 247 L303 249 L300 254 L297 249 L292 247 L297 245 Z" fill="#FB7185"/>
+</svg>

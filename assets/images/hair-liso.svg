@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="lisoBg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#BAE6FD"/>
+    </linearGradient>
+    <linearGradient id="lisoFios" x1="0" y1="0" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0284C7"/>
+      <stop offset="1" stop-color="#0369A1"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#lisoBg)"/>
+  <circle cx="60" cy="60" r="46" fill="#FFFFFF" fill-opacity="0.85"/>
+  <!-- Fios lisos com brilho e alinhamento -->
+  <line x1="42" y1="28" x2="42" y2="92" stroke="url(#lisoFios)" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="51" y1="24" x2="51" y2="96" stroke="url(#lisoFios)" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="60" y1="22" x2="60" y2="98" stroke="url(#lisoFios)" stroke-width="5" stroke-linecap="round"/>
+  <line x1="69" y1="24" x2="69" y2="96" stroke="url(#lisoFios)" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="78" y1="28" x2="78" y2="92" stroke="url(#lisoFios)" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Reflexos de brilho -->
+  <path d="M54 36 L57 42 L63 45 L57 48 L54 54 L51 48 L45 45 L51 42 Z" fill="#38BDF8"/>
+  <path d="M72 68 L74 72 L78 74 L74 76 L72 80 L70 76 L66 74 L70 72 Z" fill="#38BDF8"/>
+</svg>

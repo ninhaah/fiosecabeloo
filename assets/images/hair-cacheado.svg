@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="cacheadoBg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE4E6"/>
+      <stop offset="1" stop-color="#FECDD3"/>
+    </linearGradient>
+    <linearGradient id="cacheadoFios" x1="0" y1="0" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F43F5E"/>
+      <stop offset="1" stop-color="#BE123C"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="30" fill="url(#cacheadoBg)"/>
+  <circle cx="60" cy="60" r="46" fill="#FFFFFF" fill-opacity="0.85"/>
+  <!-- Cachos em espiral bem marcados -->
+  <path d="M42 24 C58 32 58 46 42 54 C58 62 58 76 42 84 C54 90 52 98 42 100" stroke="url(#cacheadoFios)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M60 20 C76 30 76 44 60 54 C76 64 76 78 60 88 C72 94 70 100 60 102" stroke="url(#cacheadoFios)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M78 24 C94 32 94 46 78 54 C94 62 94 76 78 84 C90 90 88 98 78 100" stroke="url(#cacheadoFios)" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Efeitos de iluminação -->
+  <circle cx="52" cy="38" r="2.5" fill="#FDA4AF"/>
+  <circle cx="70" cy="70" r="3" fill="#FDA4AF"/>
+</svg>
